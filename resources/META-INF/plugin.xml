@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Bookmarks-Plus</name>
+  <version>1.0</version>
+  <vendor email="461600404@qq.com" url="http://www.baidu.com">无</vendor>
+
+  <description>
+    书签增强
+  </description>
+
+  <change-notes>
+    书签增强
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="PopupAction_ID" class="com.sysq.action.PopupAction" text="add bookmarks" description="添加书签">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="bookmarks" secondary="true" icon="AllIcons.Actions.Words" anchor="right"
+                factoryClass="com.sysq.window.BookmarksWindowFactory"/>
+  </extensions>
+
+  <application-components>
+    <component>
+      <implementation-class>com.sysq.component.BookMarksApplicationComponent</implementation-class>
+    </component>
+  </application-components>
+
+</idea-plugin>
